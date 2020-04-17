@@ -1,0 +1,27 @@
+{
+  "name": "todolist_db_assignment",
+  "version": "1.0.0",
+  "description": "Project: Task and Notes Manager",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Dheeraj Srivastava",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^4.1.1",
+    "sequelize": "5.21.5",
+    "bootstrap": "^4.1.1",
+    "popper.js": "^1.14.3"
+  },
+  "engines": {
+    "node": "^13.9.0",
+    "npm": "^6.13.7"
+  }
+}
