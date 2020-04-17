@@ -13,33 +13,52 @@
 </head>
 
 <body onload=fetchAll()>
-    <nav class="navbar navbar-dark bg-secondary">
-        <h1 style="color:white;">Todo List Manager</h1>
-    </nav>
+    <div class="jumbotron">
+        <h1>To do Manager</h1>
+      </div>
+    <br>
+    <div id="listOfTasks">
+        <fieldset>
+            <h3>List of Available Tasks</h3>
+            <p>
+                <label>Sort By</label>
+                <!-- <button class="btn btn-outline-info">Apply</button> -->
+                <select id="sortingPreference" class="btn default" onclick=Sort()>
+                    <option value="dateASC">Due Date(Asc)</option>
+                    <option value="dateDESC">Due Date(Desc)</option>
+                    <option value="priority">Priority (high to low)</option>
+                    <option value="status">Completion Status</option>
+                </select>
+            </p>
+
+            <ul id="listElement"></ul>
+
+        </fieldset>
+    </div>
     <br>
     <div>
-        <button type="button" class="btn btn-outline-dark" onclick=showAddTaskForm()>I want to Add a Task</button>
-        <button type="button" class="btn btn-outline-dark" onclick=showUpdateTaskForm()>I want to Update a Task</button>
-        <button type="button" class="btn btn-outline-dark" onclick=collapseAllView()>Collapse View</button>
+        <button type="button" class="btn btn-primary" onclick=showAddTaskForm()>I want to Add a Task</button>
+        <button type="button" class="btn btn-primary" onclick=showUpdateTaskForm()>I want to Update a Task</button>
+        <button type="button" class="btn btn-primary" onclick=collapseAllView()>Collapse View</button>
     </div>
     <br>
     <div id="AddtaskForm" class="form-group border border-secondary">
         <fieldset>
             <legend class='btn btn-secondary'>Add a Task</legend><br>
-            <!--  <input type="text" name="task" id="id" placeholder="Enter Task Id" class="formInput form-control"
+            <!--  <input type="text" name="task" id="id" placeholder="Enter Task Id" class="formInput "
                 required><br> -->
             <label>Enter title</label>
-            <input type="textbox" name="title" id="title" placeholder="Enter Task Title" class="formInput form-control"
+            <input type="textbox" name="title" id="title" placeholder="Enter Task Title" class="formInput "
                 required><br>
             <label>Enter Description</label>
             <input type="text" name="description" id="description" placeholder="Enter Task description"
-                class="formInput form-control"><br>
-            <p>Due Date:&nbsp;<input type="date" name="due" id="due" class="formInput form-control"></p>
+                class="formInput "><br>
+            <p>Due Date:&nbsp;<input type="date" name="due" id="due" class="formInput "></p>
 
             <fieldset>
                 <p>
                     <label>Select Priority</label>
-                    <select id="priority" class="formInput form-control">
+                    <select id="priority" class="formInput ">
                         <option value="Low">Low</option>
                         <option value="Medium" selected>Medium</option>
                         <option value="High">High</option>
@@ -47,7 +66,7 @@
                 </p>
             </fieldset>
             <label>Status</label>
-            <input type="text" id="status" placeholder="status" class="formInput form-control" value="Incomplete"
+            <input type="text" id="status" placeholder="status" class="formInput " value="Incomplete"
                 readonly><br>
             <button type="submit" id="submit" class="btn btn-success" onclick=addTask()>Add Task</button>
             <br>
@@ -60,17 +79,17 @@
             <legend class='btn btn-secondary'>Update Task</legend>
             <label>Enter Task ID to update</label>
             <input type="text" name="task" id="idToUpdate" placeholder="Enter Task Id"
-                class="formInput form-control col-3" required><br>
+                class="formInput col-3" required><br>
             <!--  <input type="text" name="title" id="title" placeholder="Task Title" class="form-control col-2" required
                 readonly><br>
             <input type="text" name="description" id="description" placeholder="Task description"
                 class="formInput form-control col-2" readonly><br> -->
-            <p>Due Date:&nbsp;<input type="date" name="due" id="dueToUpdate" class="formInput form-control col-3"></p>
+            <p>Due Date:&nbsp;<input type="date" name="due" id="dueToUpdate" class="formInput  col-3"></p>
 
             <fieldset>
                 <p>
                     <label>Select Priority</label>
-                    <select id="priorityToUpdate" class="formInput form-control col-3">
+                    <select id="priorityToUpdate" class="formInput  col-3">
                         <option value="Low">Low</option>
                         <option value="Medium" selected>Medium</option>
                         <option value="High">High</option>
@@ -79,7 +98,7 @@
             </fieldset>
 
             <label>Status</label>
-            <select id="statusToUpdate" placeholder="status" class="formInput form-control col-3">
+            <select id="statusToUpdate" placeholder="status" class="formInput col-3">
                 <option value="Completed">Completed</option>
                 <option value="Incomplete">Incomplete</option>
             </select><br>
@@ -88,24 +107,7 @@
         </fieldset><br>
     </div>
 
-    <div id="listOfTasks">
-        <fieldset>
-            <h3>List of Available Tasks</h3>
-            <p>
-                <label>Sort By</label>
-                <!-- <button class="btn btn-outline-info">Apply</button> -->
-                <select id="sortingPreference" class="btn btn-outline-info" onclick=Sort()>
-                    <option value="dateASC">Due Date(Asc)</option>
-                    <option value="dateDESC">Due Date(Desc)</option>
-                    <option value="priority">Priority (high to low)</option>
-                    <option value="status">Completion Status</option>
-                </select>
-            </p>
-
-            <ul id="listElement"></ul>
-
-        </fieldset>
-    </div>
+   
 
     <script>
         // Set default value to tomorrow's date
